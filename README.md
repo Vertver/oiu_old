@@ -1,12 +1,15 @@
 # oiu
-Free, fast and beutifyl DAW.
 
-# Libs
+Free, fast and beutifyl DAW.
+***
+oui - Эксперименты русских ребят.
+
+## Libs
 
 -LAME
 -
 
-# Contacts
+## Contacts
 oiu.github.com
 
 ==================================
