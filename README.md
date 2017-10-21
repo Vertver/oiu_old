@@ -4,10 +4,10 @@ Free, fast and beutifyl DAW.
 
 ## Libs
 
-*-LAME
-*-libflac
-*-libogg
-*-libvorbis
+* -LAME
+* -libflac
+* -libogg
+* -libvorbis
 
 ### Contacts
 oiu.github.com
