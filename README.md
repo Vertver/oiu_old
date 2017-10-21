@@ -12,6 +12,6 @@ Free, fast and beutifyl DAW.
 ### Contacts
 oiu.github.com
 
-Vertver - <camotank12345@gmail.com>
+Vertver - Main code <camotank12345@gmail.com>
 ---
-Hpl1nk - <hplink@email.com>
+Hpl1nk - Support <hplink@email.com>
