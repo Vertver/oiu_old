@@ -52,4 +52,9 @@
   <ItemGroup>
     <Text Include="D:\libsndfile-master\Win32\README-precompiled-dll.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <Filter>Resources</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
