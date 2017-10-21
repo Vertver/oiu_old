@@ -1,3 +1,4 @@
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by app.rc
+//{{НЕТ_ЗАВИСИМОСТИ}}
+// Microsoft Visual C++ сгенерированный включаемый в код файл.
+// Используется для app.rc
+

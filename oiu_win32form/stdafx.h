@@ -1,8 +1,8 @@
-// stdafx.h: Includedatei fьr Standardsystem-Includedateien
-// oder hдufig verwendete projektspezifische Includedateien,
-// die nur in unregelmдяigen Abstдnden geдndert werden.
+// stdafx.h: ¬ключает файл дл€ стандартных системых файлов
+// или часто используемых проэктов дл€ решени€
+// которые измен€ютс€ с нерегул€рными интервалами.
 //
 
 #pragma once
 
-// TODO: Hier auf zusдtzliche Header, die das Programm erfordert, verweisen.
+// TODO: ќбращаетс€ к дополнительным заголовкам, которые требуютс€ программе
