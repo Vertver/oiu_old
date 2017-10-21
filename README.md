@@ -4,12 +4,12 @@ Free, fast and beutifyl DAW.
 
 ## Libs
 
--LAME
--libflac
--libogg
--libvorbis
+*-LAME
+*-libflac
+*-libogg
+*-libvorbis
 
-## Contacts
+### Contacts
 oiu.github.com
 
 Vertver - <camotank12345@gmail.com>
