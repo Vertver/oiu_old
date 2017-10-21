@@ -1,15 +1,15 @@
 # oiu
-The shitty DAW on the world
-
-# About
 Free, fast and beutifyl DAW.
 
 # Libs
---LAME
---
+
+-LAME
+-
 
 # Contacts
+oiu.github.com
 
-Blah blah  blah
-
---Site :
+==================================
+Vertver - camotank12345@gmail.com
+Hpl1nk - hplink@email.com
+==================================
