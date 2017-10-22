@@ -8,6 +8,7 @@ namespace CppCLR_WinformsProjekt {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Заголовок для класса Form1
@@ -22,6 +23,7 @@ namespace CppCLR_WinformsProjekt {
 			//TODO: Исходный код добавлять сюда.
 			//
 		}
+
 
 	protected:
 		/// <summary>
@@ -238,34 +240,36 @@ namespace CppCLR_WinformsProjekt {
 			// newToolStripMenuItem1
 			// 
 			this->newToolStripMenuItem1->Name = L"newToolStripMenuItem1";
-			this->newToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->newToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->newToolStripMenuItem1->Text = L"New";
 			// 
 			// openToolStripMenuItem1
 			// 
 			this->openToolStripMenuItem1->Name = L"openToolStripMenuItem1";
-			this->openToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->openToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->openToolStripMenuItem1->Text = L"Open";
+			this->openToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
 			// 
 			// saveEsToolStripMenuItem
 			// 
 			this->saveEsToolStripMenuItem->Name = L"saveEsToolStripMenuItem";
-			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveEsToolStripMenuItem->Text = L"Save As";
 			this->saveEsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveEsToolStripMenuItem_Click);
 			// 
 			// saveAndExitToolStripMenuItem
 			// 
 			this->saveAndExitToolStripMenuItem->Name = L"saveAndExitToolStripMenuItem";
-			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveAndExitToolStripMenuItem->Text = L"Save and exit";
+			this->saveAndExitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// editToolStripMenuItem1
 			// 
@@ -538,11 +542,16 @@ namespace CppCLR_WinformsProjekt {
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		// Функция закрытие программы для кнопки
-		Close();
+		Close();}
 
-	
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+				 // Функция открытия диалогового окна
+		
+			 }
 
-	}
+
+
+
 		// Остальное - тулбоксы
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
