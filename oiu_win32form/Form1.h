@@ -57,8 +57,8 @@ namespace CppCLR_WinformsProjekt {
 	private: System::Windows::Forms::TabControl^  tabControl1;
 
 	private: System::Windows::Forms::TabPage^  tabPage2;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label3;
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^  resetsToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  favoritesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  makeMoreLoudToolStripMenuItem;
@@ -73,6 +73,13 @@ namespace CppCLR_WinformsProjekt {
 	private: System::Windows::Forms::ToolStripMenuItem^  ðóññêèéToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  óêðà¿íñüêèéToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  helpToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  saveAndExitToolStripMenuItem;
+	private: System::Windows::Forms::CheckBox^  checkBox1;
+	private: System::Windows::Forms::CheckedListBox^  Normalize;
+	private: System::Windows::Forms::ToolTip^  toolTip1;
+	private: System::Windows::Forms::CheckedListBox^  checkedListBox1;
+	private: System::Windows::Forms::CheckedListBox^  checkedListBox2;
+
 
 
 
@@ -119,6 +126,7 @@ namespace CppCLR_WinformsProjekt {
 			this->openToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveEsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveAndExitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->editToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clearToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clearToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -135,16 +143,19 @@ namespace CppCLR_WinformsProjekt {
 			this->vocalEnhancerToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->warpingToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->addMoreToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->abouyToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->languagesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->englishToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ðóññêèéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->óêðà¿íñüêèéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->abouyToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->Normalize = (gcnew System::Windows::Forms::CheckedListBox());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
+			this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
+			this->checkedListBox2 = (gcnew System::Windows::Forms::CheckedListBox());
 			this->File->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
@@ -153,7 +164,7 @@ namespace CppCLR_WinformsProjekt {
 			// 
 			// button1
 			// 
-			this->button1->Cursor = System::Windows::Forms::Cursors::Cross;
+			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Location = System::Drawing::Point(717, 421);
 			this->button1->Name = L"button1";
@@ -215,39 +226,46 @@ namespace CppCLR_WinformsProjekt {
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
 				this->newToolStripMenuItem1,
-					this->openToolStripMenuItem1, this->saveToolStripMenuItem, this->saveEsToolStripMenuItem
+					this->openToolStripMenuItem1, this->saveToolStripMenuItem, this->saveEsToolStripMenuItem, this->saveAndExitToolStripMenuItem
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
 			this->fileToolStripMenuItem->Text = L"File";
+			this->fileToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::fileToolStripMenuItem_Click);
 			// 
 			// newToolStripMenuItem1
 			// 
 			this->newToolStripMenuItem1->Name = L"newToolStripMenuItem1";
-			this->newToolStripMenuItem1->Size = System::Drawing::Size(114, 22);
+			this->newToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->newToolStripMenuItem1->Text = L"New";
 			// 
 			// openToolStripMenuItem1
 			// 
 			this->openToolStripMenuItem1->Name = L"openToolStripMenuItem1";
-			this->openToolStripMenuItem1->Size = System::Drawing::Size(114, 22);
+			this->openToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->openToolStripMenuItem1->Text = L"Open";
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(114, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
 			// 
 			// saveEsToolStripMenuItem
 			// 
 			this->saveEsToolStripMenuItem->Name = L"saveEsToolStripMenuItem";
-			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(114, 22);
+			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveEsToolStripMenuItem->Text = L"Save As";
 			this->saveEsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveEsToolStripMenuItem_Click);
+			// 
+			// saveAndExitToolStripMenuItem
+			// 
+			this->saveAndExitToolStripMenuItem->Name = L"saveAndExitToolStripMenuItem";
+			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(142, 22);
+			this->saveAndExitToolStripMenuItem->Text = L"Save and exit";
 			// 
 			// editToolStripMenuItem1
 			// 
@@ -360,14 +378,6 @@ namespace CppCLR_WinformsProjekt {
 			this->addMoreToolStripMenuItem->Size = System::Drawing::Size(169, 22);
 			this->addMoreToolStripMenuItem->Text = L"Add more...";
 			// 
-			// abouyToolStripMenuItem
-			// 
-			this->abouyToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->helpToolStripMenuItem });
-			this->abouyToolStripMenuItem->Name = L"abouyToolStripMenuItem";
-			this->abouyToolStripMenuItem->Size = System::Drawing::Size(52, 20);
-			this->abouyToolStripMenuItem->Text = L"About";
-			this->abouyToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::abouyToolStripMenuItem_Click);
-			// 
 			// languagesToolStripMenuItem
 			// 
 			this->languagesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
@@ -381,20 +391,34 @@ namespace CppCLR_WinformsProjekt {
 			// englishToolStripMenuItem
 			// 
 			this->englishToolStripMenuItem->Name = L"englishToolStripMenuItem";
-			this->englishToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->englishToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->englishToolStripMenuItem->Text = L"English";
 			// 
 			// ðóññêèéToolStripMenuItem
 			// 
 			this->ðóññêèéToolStripMenuItem->Name = L"ðóññêèéToolStripMenuItem";
-			this->ðóññêèéToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ðóññêèéToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->ðóññêèéToolStripMenuItem->Text = L"Ðóññêèé";
 			// 
 			// óêðà¿íñüêèéToolStripMenuItem
 			// 
 			this->óêðà¿íñüêèéToolStripMenuItem->Name = L"óêðà¿íñüêèéToolStripMenuItem";
-			this->óêðà¿íñüêèéToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->óêðà¿íñüêèéToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->óêðà¿íñüêèéToolStripMenuItem->Text = L"Óêðà¿íñüêèé";
+			// 
+			// abouyToolStripMenuItem
+			// 
+			this->abouyToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->helpToolStripMenuItem });
+			this->abouyToolStripMenuItem->Name = L"abouyToolStripMenuItem";
+			this->abouyToolStripMenuItem->Size = System::Drawing::Size(52, 20);
+			this->abouyToolStripMenuItem->Text = L"About";
+			this->abouyToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::abouyToolStripMenuItem_Click);
+			// 
+			// helpToolStripMenuItem
+			// 
+			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
+			this->helpToolStripMenuItem->Size = System::Drawing::Size(99, 22);
+			this->helpToolStripMenuItem->Text = L"Help";
 			// 
 			// tabControl1
 			// 
@@ -402,60 +426,94 @@ namespace CppCLR_WinformsProjekt {
 			this->tabControl1->Location = System::Drawing::Point(13, 28);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(223, 381);
+			this->tabControl1->Size = System::Drawing::Size(216, 381);
 			this->tabControl1->TabIndex = 3;
 			// 
 			// tabPage2
 			// 
-			this->tabPage2->Controls->Add(this->label3);
-			this->tabPage2->Controls->Add(this->label2);
+			this->tabPage2->Controls->Add(this->checkedListBox2);
+			this->tabPage2->Controls->Add(this->checkedListBox1);
+			this->tabPage2->Controls->Add(this->Normalize);
 			this->tabPage2->Location = System::Drawing::Point(4, 22);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(215, 355);
+			this->tabPage2->Size = System::Drawing::Size(208, 355);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Presets";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabPage2->Click += gcnew System::EventHandler(this, &Form1::tabPage2_Click);
 			// 
-			// label3
+			// Normalize
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(7, 30);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(80, 13);
-			this->label3->TabIndex = 1;
-			this->label3->Text = L"Low Frequency";
-			this->label3->Click += gcnew System::EventHandler(this, &Form1::label3_Click);
+			this->Normalize->CheckOnClick = true;
+			this->Normalize->ContextMenuStrip = this->File;
+			this->Normalize->Dock = System::Windows::Forms::DockStyle::Top;
+			this->Normalize->FormattingEnabled = true;
+			this->Normalize->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Normalize" });
+			this->Normalize->Location = System::Drawing::Point(3, 3);
+			this->Normalize->Name = L"Normalize";
+			this->Normalize->Size = System::Drawing::Size(202, 19);
+			this->Normalize->TabIndex = 0;
+			this->Normalize->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::Normalize_SelectedIndexChanged);
 			// 
-			// label2
+			// checkBox1
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(7, 7);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(82, 13);
-			this->label2->TabIndex = 0;
-			this->label2->Text = L"High Frequency";
-			this->label2->Click += gcnew System::EventHandler(this, &Form1::label2_Click);
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Location = System::Drawing::Point(200, 27);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(59, 17);
+			this->checkBox1->TabIndex = 2;
+			this->checkBox1->Text = L"Effects";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &Form1::checkBox1_CheckedChanged);
 			// 
-			// helpToolStripMenuItem
+			// toolTip1
 			// 
-			this->helpToolStripMenuItem->Name = L"helpToolStripMenuItem";
-			this->helpToolStripMenuItem->Size = System::Drawing::Size(152, 22);
-			this->helpToolStripMenuItem->Text = L"Help";
+			this->toolTip1->Popup += gcnew System::Windows::Forms::PopupEventHandler(this, &Form1::toolTip1_Popup);
+			// 
+			// checkedListBox1
+			// 
+			this->checkedListBox1->CheckOnClick = true;
+			this->checkedListBox1->ContextMenuStrip = this->File;
+			this->checkedListBox1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->checkedListBox1->FormattingEnabled = true;
+			this->checkedListBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Vocal Enhancer" });
+			this->checkedListBox1->Location = System::Drawing::Point(3, 22);
+			this->checkedListBox1->Name = L"checkedListBox1";
+			this->checkedListBox1->Size = System::Drawing::Size(202, 19);
+			this->checkedListBox1->TabIndex = 1;
+			this->checkedListBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::checkedListBox1_SelectedIndexChanged);
+			// 
+			// checkedListBox2
+			// 
+			this->checkedListBox2->CheckOnClick = true;
+			this->checkedListBox2->ContextMenuStrip = this->File;
+			this->checkedListBox2->Dock = System::Windows::Forms::DockStyle::Top;
+			this->checkedListBox2->FormattingEnabled = true;
+			this->checkedListBox2->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Vocal Compressor" });
+			this->checkedListBox2->Location = System::Drawing::Point(3, 41);
+			this->checkedListBox2->Name = L"checkedListBox2";
+			this->checkedListBox2->Size = System::Drawing::Size(202, 19);
+			this->checkedListBox2->TabIndex = 2;
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->ClientSize = System::Drawing::Size(804, 456);
+			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximumSize = System::Drawing::Size(820, 495);
+			this->MinimumSize = System::Drawing::Size(820, 495);
 			this->Name = L"Form1";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
 			this->Text = L"oiu";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->File->ResumeLayout(false);
@@ -463,7 +521,6 @@ namespace CppCLR_WinformsProjekt {
 			this->menuStrip1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage2->ResumeLayout(false);
-			this->tabPage2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -510,6 +567,20 @@ private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void favoritesToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void fileToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void toolTip1_Popup(System::Object^  sender, System::Windows::Forms::PopupEventArgs^  e) {
+}
+private: System::Void tabPage2_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void Normalize_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void checkedListBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 }
 	; }

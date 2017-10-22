@@ -1,6 +1,6 @@
 # oiu
 
-Free, fast and beutifyl DAW.
+Free, open and progressive DAW.
 
 ## Libs
 
@@ -10,8 +10,13 @@ Free, fast and beutifyl DAW.
 * -libvorbis
 
 ### Contacts
-oiu.github.com
+oiu.github.com - Main page
 
 Vertver - <camotank12345@gmail.com>
 ---
 Hpl1nk - <hplink@email.com>
+---
+
+#### Why is it created?
+
+Because we wanted to create a beast DAW for the blogers

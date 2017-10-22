@@ -11,27 +11,27 @@ using namespace System::Security::Permissions;
 // Attribute gesteuert. Дndern Sie diese Attributwerte, um die Informationen zu дndern,
 // die einer Assembly zugeordnet sind.
 //
-[assembly:AssemblyTitleAttribute(L"CppCLR_WinformsProjekt")];
-[assembly:AssemblyDescriptionAttribute(L"")];
+[assembly:AssemblyTitleAttribute(L"oiu_project")];
+[assembly:AssemblyDescriptionAttribute(L"pre-alpha")];
 [assembly:AssemblyConfigurationAttribute(L"")];
 [assembly:AssemblyCompanyAttribute(L"")];
-[assembly:AssemblyProductAttribute(L"CppCLR_WinformsProjekt")];
+[assembly:AssemblyProductAttribute(L"oiu")];
 [assembly:AssemblyCopyrightAttribute(L"Copyright (c)  2017")];
 [assembly:AssemblyTrademarkAttribute(L"")];
 [assembly:AssemblyCultureAttribute(L"")];
 
 //
-// Versionsinformationen fьr eine Assembly bestehen aus den folgenden vier Werten:
+// Версия программы может быть описана здесь:
 //
-//      Hauptversion
-//      Nebenversion
-//      Buildnummer
-//      Revision
+//      Главная версия
+//      Алтернативная версия
+//      Номер сборки
+//      Ревизии
 //
 // Sie kцnnen alle Werte angeben oder fьr die Revisions- und Buildnummer den Standard
 // ьbernehmen, indem Sie "*" eingeben:
 
-[assembly:AssemblyVersionAttribute("1.0.*")];
+[assembly:AssemblyVersionAttribute("1.2.*")];
 
 [assembly:ComVisible(false)];
 
