@@ -151,11 +151,11 @@ namespace CppCLR_WinformsProjekt {
 			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->checkedListBox2 = (gcnew System::Windows::Forms::CheckedListBox());
+			this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
 			this->Normalize = (gcnew System::Windows::Forms::CheckedListBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
-			this->checkedListBox2 = (gcnew System::Windows::Forms::CheckedListBox());
 			this->File->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
@@ -443,6 +443,31 @@ namespace CppCLR_WinformsProjekt {
 			this->tabPage2->UseVisualStyleBackColor = true;
 			this->tabPage2->Click += gcnew System::EventHandler(this, &Form1::tabPage2_Click);
 			// 
+			// checkedListBox2
+			// 
+			this->checkedListBox2->CheckOnClick = true;
+			this->checkedListBox2->ContextMenuStrip = this->File;
+			this->checkedListBox2->Dock = System::Windows::Forms::DockStyle::Top;
+			this->checkedListBox2->FormattingEnabled = true;
+			this->checkedListBox2->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Vocal Compressor" });
+			this->checkedListBox2->Location = System::Drawing::Point(3, 41);
+			this->checkedListBox2->Name = L"checkedListBox2";
+			this->checkedListBox2->Size = System::Drawing::Size(202, 19);
+			this->checkedListBox2->TabIndex = 2;
+			// 
+			// checkedListBox1
+			// 
+			this->checkedListBox1->CheckOnClick = true;
+			this->checkedListBox1->ContextMenuStrip = this->File;
+			this->checkedListBox1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->checkedListBox1->FormattingEnabled = true;
+			this->checkedListBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Vocal Enhancer" });
+			this->checkedListBox1->Location = System::Drawing::Point(3, 22);
+			this->checkedListBox1->Name = L"checkedListBox1";
+			this->checkedListBox1->Size = System::Drawing::Size(202, 19);
+			this->checkedListBox1->TabIndex = 1;
+			this->checkedListBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::checkedListBox1_SelectedIndexChanged);
+			// 
 			// Normalize
 			// 
 			this->Normalize->CheckOnClick = true;
@@ -470,31 +495,6 @@ namespace CppCLR_WinformsProjekt {
 			// toolTip1
 			// 
 			this->toolTip1->Popup += gcnew System::Windows::Forms::PopupEventHandler(this, &Form1::toolTip1_Popup);
-			// 
-			// checkedListBox1
-			// 
-			this->checkedListBox1->CheckOnClick = true;
-			this->checkedListBox1->ContextMenuStrip = this->File;
-			this->checkedListBox1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->checkedListBox1->FormattingEnabled = true;
-			this->checkedListBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Vocal Enhancer" });
-			this->checkedListBox1->Location = System::Drawing::Point(3, 22);
-			this->checkedListBox1->Name = L"checkedListBox1";
-			this->checkedListBox1->Size = System::Drawing::Size(202, 19);
-			this->checkedListBox1->TabIndex = 1;
-			this->checkedListBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::checkedListBox1_SelectedIndexChanged);
-			// 
-			// checkedListBox2
-			// 
-			this->checkedListBox2->CheckOnClick = true;
-			this->checkedListBox2->ContextMenuStrip = this->File;
-			this->checkedListBox2->Dock = System::Windows::Forms::DockStyle::Top;
-			this->checkedListBox2->FormattingEnabled = true;
-			this->checkedListBox2->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Vocal Compressor" });
-			this->checkedListBox2->Location = System::Drawing::Point(3, 41);
-			this->checkedListBox2->Name = L"checkedListBox2";
-			this->checkedListBox2->Size = System::Drawing::Size(202, 19);
-			this->checkedListBox2->TabIndex = 2;
 			// 
 			// Form1
 			// 
@@ -537,6 +537,9 @@ namespace CppCLR_WinformsProjekt {
 
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		// Функция закрытие программы для кнопки
+		Close();
+
 	
 
 	}
