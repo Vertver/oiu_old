@@ -15,7 +15,6 @@ oiu.github.com - Main page
 Vertver - Main code <camotank12345@gmail.com>
 ---
 Hpl1nk - Support <hplink@email.com>
-Hpl1nk - <hplink@email.com>
 ---
 
 #### Why is it created?
