@@ -24,6 +24,9 @@
     <ClInclude Include="Form1.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="PythonPlugin.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -41,6 +44,9 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Form1.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonPlugin.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
