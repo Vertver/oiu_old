@@ -238,33 +238,33 @@ namespace CppCLR_WinformsProjekt {
 			// newToolStripMenuItem1
 			// 
 			this->newToolStripMenuItem1->Name = L"newToolStripMenuItem1";
-			this->newToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
+			this->newToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
 			this->newToolStripMenuItem1->Text = L"New";
 			// 
 			// openToolStripMenuItem1
 			// 
 			this->openToolStripMenuItem1->Name = L"openToolStripMenuItem1";
-			this->openToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
+			this->openToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
 			this->openToolStripMenuItem1->Text = L"Open";
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(142, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
 			// 
 			// saveEsToolStripMenuItem
 			// 
 			this->saveEsToolStripMenuItem->Name = L"saveEsToolStripMenuItem";
-			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(142, 22);
+			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->saveEsToolStripMenuItem->Text = L"Save As";
 			this->saveEsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveEsToolStripMenuItem_Click);
 			// 
 			// saveAndExitToolStripMenuItem
 			// 
 			this->saveAndExitToolStripMenuItem->Name = L"saveAndExitToolStripMenuItem";
-			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(142, 22);
+			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->saveAndExitToolStripMenuItem->Text = L"Save and exit";
 			// 
 			// editToolStripMenuItem1
@@ -498,6 +498,7 @@ namespace CppCLR_WinformsProjekt {
 			// 
 			// Form1
 			// 
+			this->AllowDrop = true;
 			this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->ClientSize = System::Drawing::Size(804, 456);
@@ -514,7 +515,6 @@ namespace CppCLR_WinformsProjekt {
 			this->Name = L"Form1";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
-			this->Text = L"oiu";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->File->ResumeLayout(false);
 			this->menuStrip1->ResumeLayout(false);
@@ -543,6 +543,7 @@ namespace CppCLR_WinformsProjekt {
 	
 
 	}
+		// Остальное - тулбоксы
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void saveAsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -550,7 +551,7 @@ private: System::Void saveAsToolStripMenuItem_Click(System::Object^  sender, Sys
 private: System::Void saveToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void menuStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
-}
+}			
 private: System::Void saveToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void saveEsToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
