@@ -79,6 +79,8 @@ namespace CppCLR_WinformsProjekt {
 	private: System::Windows::Forms::ToolTip^  toolTip1;
 	private: System::Windows::Forms::CheckedListBox^  checkedListBox1;
 	private: System::Windows::Forms::CheckedListBox^  checkedListBox2;
+	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
+	private: System::Windows::Forms::Button^  button2;
 
 
 
@@ -156,6 +158,8 @@ namespace CppCLR_WinformsProjekt {
 			this->Normalize = (gcnew System::Windows::Forms::CheckedListBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->File->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
@@ -191,6 +195,7 @@ namespace CppCLR_WinformsProjekt {
 			this->File->RenderMode = System::Windows::Forms::ToolStripRenderMode::System;
 			this->File->Size = System::Drawing::Size(104, 70);
 			this->File->UseWaitCursor = true;
+			this->File->Opening += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::File_Opening);
 			// 
 			// newToolStripMenuItem
 			// 
@@ -238,33 +243,33 @@ namespace CppCLR_WinformsProjekt {
 			// newToolStripMenuItem1
 			// 
 			this->newToolStripMenuItem1->Name = L"newToolStripMenuItem1";
-			this->newToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->newToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->newToolStripMenuItem1->Text = L"New";
 			// 
 			// openToolStripMenuItem1
 			// 
 			this->openToolStripMenuItem1->Name = L"openToolStripMenuItem1";
-			this->openToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->openToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->openToolStripMenuItem1->Text = L"Open";
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveToolStripMenuItem_Click);
 			// 
 			// saveEsToolStripMenuItem
 			// 
 			this->saveEsToolStripMenuItem->Name = L"saveEsToolStripMenuItem";
-			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveEsToolStripMenuItem->Text = L"Save As";
 			this->saveEsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveEsToolStripMenuItem_Click);
 			// 
 			// saveAndExitToolStripMenuItem
 			// 
 			this->saveAndExitToolStripMenuItem->Name = L"saveAndExitToolStripMenuItem";
-			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveAndExitToolStripMenuItem->Text = L"Save and exit";
 			// 
 			// editToolStripMenuItem1
@@ -496,12 +501,28 @@ namespace CppCLR_WinformsProjekt {
 			// 
 			this->toolTip1->Popup += gcnew System::Windows::Forms::PopupEventHandler(this, &Form1::toolTip1_Popup);
 			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			this->openFileDialog1->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::openFileDialog1_FileOk);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(350, 111);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(308, 63);
+			this->button2->TabIndex = 4;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			// 
 			// Form1
 			// 
 			this->AllowDrop = true;
 			this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->ClientSize = System::Drawing::Size(804, 456);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->menuStrip1);
@@ -585,6 +606,12 @@ private: System::Void tabPage2_Click(System::Object^  sender, System::EventArgs^
 private: System::Void Normalize_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void checkedListBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void File_Opening(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+}
+private: System::Void openFileDialog1_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 }
 	; }
