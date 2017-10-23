@@ -1,13 +1,13 @@
-// CppCLR_WinformsProjekt.cpp: Оконный редактор.
-
-// #include "stdafx.h"
-// using namespace System;
-
-//int main(array<System::String ^> ^args)
-//{
-//    Console::WriteLine(L"Hello World");
-//    return 0;
-//}
+/* "oiu" Version GPL Source Code
+/
+/ (c) Anton Vertver, Main coder, 2017
+/
+/ "oiu" Source Code is free software: you can redistribute it and/or modify for your apps and other projects
+/
+/ The code can contain comments in different languages (like a Russia, English, Deutsh)
+/
+/ Non-copyright source code
+*/
 #include "stdafx.h"
 #include "Form1.h"
 #include "resource.h"

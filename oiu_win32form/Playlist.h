@@ -1,3 +1,13 @@
+/* "oiu" Version GPL Source Code
+/
+/ (c) Anton Vertver, Main coder, 2017
+/
+/ "oiu" Source Code is free software: you can redistribute it and/or modify for your apps and other projects
+/
+/ The code can contain comments in different languages (like a Russia, English, Deutsh)
+/
+/ Non-copyright source code
+*/
 #pragma once
 
 #include <deque>
@@ -24,7 +34,7 @@ public:
 
 		m_FileNames.pop_front();
 
-		// readd to the end of the list
+		// Читается в конце списка
 		if ( Loop ) m_FileNames.push_back( Result );
 
 		return Result;

@@ -1,7 +1,13 @@
-// stdafx.h: включаемый файл для стандартных системных включаемых файлов
-// или включаемых файлов для конкретного проекта, которые часто используются, но
-// не часто изменяются
-//
+/* "oiu" Version GPL Source Code
+/
+/ (c) Anton Vertver, Main coder, 2017
+/
+/ "oiu" Source Code is free software: you can redistribute it and/or modify for your apps and other projects
+/
+/ The code can contain comments in different languages (like a Russia, English, Deutsh)
+/
+/ Non-copyright source code
+*/
 
 #pragma once
 //For /Wall
@@ -19,7 +25,7 @@
 #include "AudioSubsystem.h"
 #include "AudioSubsystem_OpenAL.h"
 #include "Playlist.h"
-#include "Utils.h" // Обожаю слишком много заголовков owo
+#include "Utils.h" // Обожаю слишком много инклюдов OWO
 #include <stdio.h>
 #include <string>
 #include <vector>
