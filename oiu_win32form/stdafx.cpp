@@ -3,6 +3,5 @@
 // stdafx.obj enthält die vorkompilierten Typinformationen.
 
 #include "stdafx.h"
-#include "resource.h"
 #include "Form1.h"
 

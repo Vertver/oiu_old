@@ -24,19 +24,19 @@
     <ClInclude Include="PythonPlugin.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\Utils.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\AudioSubsystem.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\AudioSubsystem_OpenAL.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\Playlist.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
     <ClInclude Include="Form1.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioSubsystem_OpenAL.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Playlist.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioSubsystem.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

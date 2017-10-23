@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "resource.h"
 
 using namespace System;
 using namespace System::Reflection;

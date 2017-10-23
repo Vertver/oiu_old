@@ -161,16 +161,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\AudioSubsystem.h" />
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\AudioSubsystem_OpenAL.h" />
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\Playlist.h" />
-    <ClInclude Include="..\..\oiu_webform\oiu_win32form\Utils.h" />
+    <ClInclude Include="AudioSubsystem.h" />
+    <ClInclude Include="AudioSubsystem_OpenAL.h" />
     <ClInclude Include="Form1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Playlist.h" />
     <ClInclude Include="PythonPlugin.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
