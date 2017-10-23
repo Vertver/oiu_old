@@ -92,6 +92,13 @@ namespace CppCLR_WinformsProjekt {
 	private: System::Windows::Forms::CheckedListBox^  checkedListBox1;
 	private: System::Windows::Forms::CheckedListBox^  checkedListBox2;
 	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
+	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog1;
+	private: System::IO::FileSystemWatcher^  fileSystemWatcher1;
+	private: System::Windows::Forms::ProgressBar^  progressBar1;
+	private: System::Diagnostics::Process^  process1;
+	private: System::Windows::Forms::TrackBar^  trackBar1;
+	private: System::Windows::Forms::ColorDialog^  colorDialog1;
+
 
 
 
@@ -171,10 +178,18 @@ namespace CppCLR_WinformsProjekt {
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->fileSystemWatcher1 = (gcnew System::IO::FileSystemWatcher());
+			this->process1 = (gcnew System::Diagnostics::Process());
+			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
+			this->trackBar1 = (gcnew System::Windows::Forms::TrackBar());
+			this->colorDialog1 = (gcnew System::Windows::Forms::ColorDialog());
 			this->File->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->fileSystemWatcher1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -254,35 +269,35 @@ namespace CppCLR_WinformsProjekt {
 			// newToolStripMenuItem1
 			// 
 			this->newToolStripMenuItem1->Name = L"newToolStripMenuItem1";
-			this->newToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->newToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->newToolStripMenuItem1->Text = L"New";
 			this->newToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::openFileDialog);
 			// 
 			// openToolStripMenuItem1
 			// 
 			this->openToolStripMenuItem1->Name = L"openToolStripMenuItem1";
-			this->openToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->openToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
 			this->openToolStripMenuItem1->Text = L"Open";
 			this->openToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::openFileDialog);
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
-			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::openFileDialog);
+			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::SaveFileDialog1);
 			// 
 			// saveEsToolStripMenuItem
 			// 
 			this->saveEsToolStripMenuItem->Name = L"saveEsToolStripMenuItem";
-			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveEsToolStripMenuItem->Text = L"Save As";
-			this->saveEsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::saveEsToolStripMenuItem_Click);
+			this->saveEsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::SaveFileDialog1);
 			// 
 			// saveAndExitToolStripMenuItem
 			// 
 			this->saveAndExitToolStripMenuItem->Name = L"saveAndExitToolStripMenuItem";
-			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(142, 22);
 			this->saveAndExitToolStripMenuItem->Text = L"Save and exit";
 			this->saveAndExitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::openFileDialog2);
 			// 
@@ -299,26 +314,26 @@ namespace CppCLR_WinformsProjekt {
 			// clearToolStripMenuItem
 			// 
 			this->clearToolStripMenuItem->Name = L"clearToolStripMenuItem";
-			this->clearToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->clearToolStripMenuItem->Size = System::Drawing::Size(116, 22);
 			this->clearToolStripMenuItem->Text = L"Options";
 			// 
 			// clearToolStripMenuItem1
 			// 
 			this->clearToolStripMenuItem1->Name = L"clearToolStripMenuItem1";
-			this->clearToolStripMenuItem1->Size = System::Drawing::Size(136, 22);
+			this->clearToolStripMenuItem1->Size = System::Drawing::Size(116, 22);
 			this->clearToolStripMenuItem1->Text = L"Clear";
 			// 
 			// resetsToolStripMenuItem
 			// 
 			this->resetsToolStripMenuItem->Name = L"resetsToolStripMenuItem";
-			this->resetsToolStripMenuItem->Size = System::Drawing::Size(136, 22);
+			this->resetsToolStripMenuItem->Size = System::Drawing::Size(116, 22);
 			this->resetsToolStripMenuItem->Text = L"Resets";
 			// 
 			// vSTPluginsToolStripMenuItem
 			// 
 			this->vSTPluginsToolStripMenuItem->Name = L"vSTPluginsToolStripMenuItem";
-			this->vSTPluginsToolStripMenuItem->Size = System::Drawing::Size(136, 22);
-			this->vSTPluginsToolStripMenuItem->Text = L"VST Plugins";
+			this->vSTPluginsToolStripMenuItem->Size = System::Drawing::Size(116, 22);
+			this->vSTPluginsToolStripMenuItem->Text = L"Search";
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -521,12 +536,47 @@ namespace CppCLR_WinformsProjekt {
 			this->openFileDialog1->Filter = L"All Files|*.*";
 			this->openFileDialog1->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::openFileDialog1_FileOk);
 			// 
+			// fileSystemWatcher1
+			// 
+			this->fileSystemWatcher1->EnableRaisingEvents = true;
+			this->fileSystemWatcher1->SynchronizingObject = this;
+			this->fileSystemWatcher1->Changed += gcnew System::IO::FileSystemEventHandler(this, &Form1::fileSystemWatcher1_Changed);
+			// 
+			// process1
+			// 
+			this->process1->StartInfo->Domain = L"";
+			this->process1->StartInfo->LoadUserProfile = false;
+			this->process1->StartInfo->Password = nullptr;
+			this->process1->StartInfo->StandardErrorEncoding = nullptr;
+			this->process1->StartInfo->StandardOutputEncoding = nullptr;
+			this->process1->StartInfo->UserName = L"";
+			this->process1->SynchronizingObject = this;
+			// 
+			// progressBar1
+			// 
+			this->progressBar1->Location = System::Drawing::Point(13, 420);
+			this->progressBar1->Name = L"progressBar1";
+			this->progressBar1->Size = System::Drawing::Size(698, 23);
+			this->progressBar1->TabIndex = 4;
+			// 
+			// trackBar1
+			// 
+			this->trackBar1->LargeChange = 2048;
+			this->trackBar1->Location = System::Drawing::Point(235, 363);
+			this->trackBar1->Maximum = 2048;
+			this->trackBar1->Name = L"trackBar1";
+			this->trackBar1->Size = System::Drawing::Size(557, 45);
+			this->trackBar1->TabIndex = 5;
+			this->trackBar1->Scroll += gcnew System::EventHandler(this, &Form1::trackBar1_Scroll);
+			// 
 			// Form1
 			// 
 			this->AllowDrop = true;
 			this->AutoScaleDimensions = System::Drawing::SizeF(96, 96);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Dpi;
 			this->ClientSize = System::Drawing::Size(804, 456);
+			this->Controls->Add(this->trackBar1);
+			this->Controls->Add(this->progressBar1);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->menuStrip1);
@@ -540,12 +590,15 @@ namespace CppCLR_WinformsProjekt {
 			this->Name = L"Form1";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
+			this->Text = L"OIU alpha";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->File->ResumeLayout(false);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->fileSystemWatcher1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->trackBar1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -624,8 +677,22 @@ private: System::Void openFileDialog2(System::Object^  sender, System::EventArgs
 private: System::Void openFileDialogProcess_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	}
+private: System::Void SaveFileDialog1(System::Object^  sender, System::EventArgs^  e) {
+	saveFileDialog1->ShowDialog();
 
+	}
+private: System::Void Option_Dialog1(System::Object^  sender, System::EventArgs^  e) {
+	
+
+
+	}
+		 private: System::Void fileSystemWatcher1_Changed(System::Object^  sender, System::IO::FileSystemEventArgs^  e) {
 		 }
+private: System::Void trackBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void notifyIcon1_MouseDoubleClick(System::Object^  sender, System::Windows::Forms::MouseEventArgs^  e) {
+}
+}
 
 	; }
 		// Сорян, пока не чистил эту помойку, потом займусь
