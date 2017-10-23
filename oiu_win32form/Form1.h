@@ -59,13 +59,13 @@ namespace CppCLR_WinformsProjekt {
 	private: System::Windows::Forms::ToolStripMenuItem^  newToolStripMenuItem1;
 	private: System::Windows::Forms::ToolStripMenuItem^  openToolStripMenuItem1;
 	private: System::Windows::Forms::ToolStripMenuItem^  saveToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  saveEsToolStripMenuItem;
+
 	private: System::Windows::Forms::ToolStripMenuItem^  clearToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  clearToolStripMenuItem1;
+
 	private: System::Windows::Forms::ToolStripMenuItem^  abouyToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  addNewToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  editToolStripMenuItem2;
-	private: System::Windows::Forms::ToolStripMenuItem^  aboutToolStripMenuItem;
+
 	private: System::Windows::Forms::TabControl^  tabControl1;
 
 	private: System::Windows::Forms::TabPage^  tabPage2;
@@ -82,8 +82,8 @@ namespace CppCLR_WinformsProjekt {
 	private: System::Windows::Forms::ToolStripMenuItem^  addMoreToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  languagesToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  englishToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  ðóññêèéToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^  óêðà¿íñüêèéToolStripMenuItem;
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^  helpToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  saveAndExitToolStripMenuItem;
 	private: System::Windows::Forms::CheckBox^  checkBox1;
@@ -98,6 +98,7 @@ namespace CppCLR_WinformsProjekt {
 	private: System::Diagnostics::Process^  process1;
 	private: System::Windows::Forms::TrackBar^  trackBar1;
 	private: System::Windows::Forms::ColorDialog^  colorDialog1;
+	private: System::Windows::Forms::ToolStripMenuItem^  clearToolStripMenuItem1;
 
 
 
@@ -146,17 +147,15 @@ namespace CppCLR_WinformsProjekt {
 			this->newToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->openToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->saveEsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveAndExitToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->editToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clearToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->clearToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->resetsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->vSTPluginsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->clearToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->viewToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->addNewToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->editToolStripMenuItem2 = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->favoritesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->makeMoreLoudToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dBLevelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -166,8 +165,6 @@ namespace CppCLR_WinformsProjekt {
 			this->addMoreToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->languagesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->englishToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ðóññêèéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->óêðà¿íñüêèéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->abouyToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->helpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
@@ -257,9 +254,9 @@ namespace CppCLR_WinformsProjekt {
 			// 
 			// fileToolStripMenuItem
 			// 
-			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+			this->fileToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->newToolStripMenuItem1,
-					this->openToolStripMenuItem1, this->saveToolStripMenuItem, this->saveEsToolStripMenuItem, this->saveAndExitToolStripMenuItem
+					this->openToolStripMenuItem1, this->saveToolStripMenuItem, this->saveAndExitToolStripMenuItem
 			});
 			this->fileToolStripMenuItem->Name = L"fileToolStripMenuItem";
 			this->fileToolStripMenuItem->Size = System::Drawing::Size(37, 20);
@@ -269,35 +266,28 @@ namespace CppCLR_WinformsProjekt {
 			// newToolStripMenuItem1
 			// 
 			this->newToolStripMenuItem1->Name = L"newToolStripMenuItem1";
-			this->newToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
+			this->newToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
 			this->newToolStripMenuItem1->Text = L"New";
-			this->newToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::openFileDialog);
+			this->newToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::SaveFileDialog1);
 			// 
 			// openToolStripMenuItem1
 			// 
 			this->openToolStripMenuItem1->Name = L"openToolStripMenuItem1";
-			this->openToolStripMenuItem1->Size = System::Drawing::Size(142, 22);
+			this->openToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
 			this->openToolStripMenuItem1->Text = L"Open";
 			this->openToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::openFileDialog);
 			// 
 			// saveToolStripMenuItem
 			// 
 			this->saveToolStripMenuItem->Name = L"saveToolStripMenuItem";
-			this->saveToolStripMenuItem->Size = System::Drawing::Size(142, 22);
+			this->saveToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->saveToolStripMenuItem->Text = L"Save";
 			this->saveToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::SaveFileDialog1);
-			// 
-			// saveEsToolStripMenuItem
-			// 
-			this->saveEsToolStripMenuItem->Name = L"saveEsToolStripMenuItem";
-			this->saveEsToolStripMenuItem->Size = System::Drawing::Size(142, 22);
-			this->saveEsToolStripMenuItem->Text = L"Save As";
-			this->saveEsToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::SaveFileDialog1);
 			// 
 			// saveAndExitToolStripMenuItem
 			// 
 			this->saveAndExitToolStripMenuItem->Name = L"saveAndExitToolStripMenuItem";
-			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(142, 22);
+			this->saveAndExitToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->saveAndExitToolStripMenuItem->Text = L"Save and exit";
 			this->saveAndExitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::openFileDialog2);
 			// 
@@ -305,7 +295,7 @@ namespace CppCLR_WinformsProjekt {
 			// 
 			this->editToolStripMenuItem1->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->clearToolStripMenuItem,
-					this->clearToolStripMenuItem1, this->resetsToolStripMenuItem, this->vSTPluginsToolStripMenuItem
+					this->resetsToolStripMenuItem, this->vSTPluginsToolStripMenuItem, this->clearToolStripMenuItem1
 			});
 			this->editToolStripMenuItem1->Name = L"editToolStripMenuItem1";
 			this->editToolStripMenuItem1->Size = System::Drawing::Size(39, 20);
@@ -316,12 +306,6 @@ namespace CppCLR_WinformsProjekt {
 			this->clearToolStripMenuItem->Name = L"clearToolStripMenuItem";
 			this->clearToolStripMenuItem->Size = System::Drawing::Size(116, 22);
 			this->clearToolStripMenuItem->Text = L"Options";
-			// 
-			// clearToolStripMenuItem1
-			// 
-			this->clearToolStripMenuItem1->Name = L"clearToolStripMenuItem1";
-			this->clearToolStripMenuItem1->Size = System::Drawing::Size(116, 22);
-			this->clearToolStripMenuItem1->Text = L"Clear";
 			// 
 			// resetsToolStripMenuItem
 			// 
@@ -335,11 +319,17 @@ namespace CppCLR_WinformsProjekt {
 			this->vSTPluginsToolStripMenuItem->Size = System::Drawing::Size(116, 22);
 			this->vSTPluginsToolStripMenuItem->Text = L"Search";
 			// 
+			// clearToolStripMenuItem1
+			// 
+			this->clearToolStripMenuItem1->Name = L"clearToolStripMenuItem1";
+			this->clearToolStripMenuItem1->Size = System::Drawing::Size(116, 22);
+			this->clearToolStripMenuItem1->Text = L"Clear";
+			// 
 			// viewToolStripMenuItem
 			// 
-			this->viewToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->viewToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
 				this->addNewToolStripMenuItem,
-					this->editToolStripMenuItem2, this->aboutToolStripMenuItem
+					this->editToolStripMenuItem2
 			});
 			this->viewToolStripMenuItem->Name = L"viewToolStripMenuItem";
 			this->viewToolStripMenuItem->Size = System::Drawing::Size(44, 20);
@@ -357,12 +347,6 @@ namespace CppCLR_WinformsProjekt {
 			this->editToolStripMenuItem2->Name = L"editToolStripMenuItem2";
 			this->editToolStripMenuItem2->Size = System::Drawing::Size(121, 22);
 			this->editToolStripMenuItem2->Text = L"Edit";
-			// 
-			// aboutToolStripMenuItem
-			// 
-			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(121, 22);
-			this->aboutToolStripMenuItem->Text = L"About";
 			// 
 			// favoritesToolStripMenuItem
 			// 
@@ -414,31 +398,18 @@ namespace CppCLR_WinformsProjekt {
 			// 
 			// languagesToolStripMenuItem
 			// 
-			this->languagesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->englishToolStripMenuItem,
-					this->ðóññêèéToolStripMenuItem, this->óêðà¿íñüêèéToolStripMenuItem
-			});
+			this->languagesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->englishToolStripMenuItem });
 			this->languagesToolStripMenuItem->Name = L"languagesToolStripMenuItem";
 			this->languagesToolStripMenuItem->Size = System::Drawing::Size(76, 20);
 			this->languagesToolStripMenuItem->Text = L"Languages";
 			// 
 			// englishToolStripMenuItem
 			// 
+			this->englishToolStripMenuItem->Checked = true;
+			this->englishToolStripMenuItem->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->englishToolStripMenuItem->Name = L"englishToolStripMenuItem";
-			this->englishToolStripMenuItem->Size = System::Drawing::Size(142, 22);
+			this->englishToolStripMenuItem->Size = System::Drawing::Size(112, 22);
 			this->englishToolStripMenuItem->Text = L"English";
-			// 
-			// ðóññêèéToolStripMenuItem
-			// 
-			this->ðóññêèéToolStripMenuItem->Name = L"ðóññêèéToolStripMenuItem";
-			this->ðóññêèéToolStripMenuItem->Size = System::Drawing::Size(142, 22);
-			this->ðóññêèéToolStripMenuItem->Text = L"Ðóññêèé";
-			// 
-			// óêðà¿íñüêèéToolStripMenuItem
-			// 
-			this->óêðà¿íñüêèéToolStripMenuItem->Name = L"óêðà¿íñüêèéToolStripMenuItem";
-			this->óêðà¿íñüêèéToolStripMenuItem->Size = System::Drawing::Size(142, 22);
-			this->óêðà¿íñüêèéToolStripMenuItem->Text = L"Óêðà¿íñüêèé";
 			// 
 			// abouyToolStripMenuItem
 			// 
@@ -686,7 +657,8 @@ private: System::Void Option_Dialog1(System::Object^  sender, System::EventArgs^
 
 
 	}
-		 private: System::Void fileSystemWatcher1_Changed(System::Object^  sender, System::IO::FileSystemEventArgs^  e) {
+private: System::Void fileSystemWatcher1_Changed(System::Object^  sender, System::IO::FileSystemEventArgs^  e) {
+
 		 }
 private: System::Void trackBar1_Scroll(System::Object^  sender, System::EventArgs^  e) {
 }
