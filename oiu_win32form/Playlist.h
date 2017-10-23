@@ -2,6 +2,7 @@
 
 #include <deque>
 #include <string>
+#include "stdafx.h"
 // Используется для app.rc
 
 
