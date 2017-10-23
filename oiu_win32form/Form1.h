@@ -561,7 +561,7 @@ namespace CppCLR_WinformsProjekt {
 			this->Name = L"Form1";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
-			this->Text = L"OIU alpha";
+			this->Text = L"OIU alpha 48 build"; // Because why not?
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->File->ResumeLayout(false);
 			this->menuStrip1->ResumeLayout(false);
@@ -586,7 +586,6 @@ namespace CppCLR_WinformsProjekt {
 
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-		// Функция закрытие программы для кнопки
 		Close();
 
 	
@@ -643,13 +642,13 @@ private: System::Void openFileDialog(System::Object^  sender, System::EventArgs^
 	openFileDialog1->ShowDialog();
 }
 private: System::Void openFileDialog2(System::Object^  sender, System::EventArgs^  e) {
-	Close();
+	Close(); 
 		 }
 private: System::Void openFileDialogProcess_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	}
 private: System::Void SaveFileDialog1(System::Object^  sender, System::EventArgs^  e) {
-	saveFileDialog1->ShowDialog();
+	saveFileDialog1->ShowDialog(); // Open a file dialog for file manager
 
 	}
 private: System::Void Option_Dialog1(System::Object^  sender, System::EventArgs^  e) {

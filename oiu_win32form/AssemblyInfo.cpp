@@ -40,7 +40,7 @@ using namespace System::Security::Permissions;
 // Sie können alle Werte angeben oder für die Revisions- und Buildnummer den Standard
 // übernehmen, indem Sie "*" eingeben:
 
-[assembly:AssemblyVersionAttribute("1.2.*")];
+[assembly:AssemblyVersionAttribute("0.244.*")];
 
 [assembly:ComVisible(false)];
 
