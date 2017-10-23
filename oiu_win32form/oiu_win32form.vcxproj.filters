@@ -21,10 +21,19 @@
     <ClInclude Include="resource.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Form1.h">
+    <ClInclude Include="PythonPlugin.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="PythonPlugin.h">
+    <ClInclude Include="..\..\oiu_webform\oiu_win32form\Utils.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\oiu_webform\oiu_win32form\AudioSubsystem.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\oiu_webform\oiu_win32form\AudioSubsystem_OpenAL.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\oiu_webform\oiu_win32form\Playlist.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
