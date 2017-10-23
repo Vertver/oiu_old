@@ -3,7 +3,9 @@
 Free, open and progressive DAW.
 
 ## Libs
-
+* -BugTrap
+* -PortAMP
+* -Python
 * -LAME
 * -libflac
 * -libogg
