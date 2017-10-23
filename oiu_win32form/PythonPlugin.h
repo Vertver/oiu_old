@@ -1,4 +1,4 @@
-// —юда добавл€ем все хедеры питона и дефайны
+// All sources and headers of Python paste here
 
 
 #pragma once

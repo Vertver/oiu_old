@@ -165,6 +165,9 @@
     <ClInclude Include="..\..\oiu_webform\oiu_win32form\AudioSubsystem_OpenAL.h" />
     <ClInclude Include="..\..\oiu_webform\oiu_win32form\Playlist.h" />
     <ClInclude Include="..\..\oiu_webform\oiu_win32form\Utils.h" />
+    <ClInclude Include="Form1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PythonPlugin.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -188,6 +191,9 @@
     <Image Include="app.ico">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

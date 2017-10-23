@@ -36,6 +36,9 @@
     <ClInclude Include="..\..\oiu_webform\oiu_win32form\Playlist.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Form1.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
