@@ -1,5 +1,6 @@
-# oiu
+# oiu_old
 
+Old version of OIU
 Free, open and progressive DAW.
 
 ## Libs
